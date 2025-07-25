@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #111827;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.75rem;
+}
+
+header p {
+  color: #94a3b8;
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.social {
+  margin-top: 20px;
+}
+
+.social a {
+  margin: 0 12px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.social a:hover {
+  color: #0ea5e9;
+}
+
+section {
+  padding: 40px 20px;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #1e293b;
+  padding-bottom: 8px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  background-color: #1f2937;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px 20px;
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.skills li {
+  position: relative;
+  background: #111827;
+  border: 1px solid #334155;
+  text-align: left;
+  padding: 10px 15px 10px 40px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+}
+
+.skills li:hover {
+  background: #1e293b;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: initial;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.skills li i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.1rem;
+  color: #38bdf8;
+}
+
+/* Ícones específicos */
+.skills li[data-icon="react"] i { color: #61dafb; }
+.skills li[data-icon="html"] i { color: #e34f26; }
+.skills li[data-icon="css"] i { color: #2965f1; }
+.skills li[data-icon="tailwind"] i { color: #06b6d4; }
+.skills li[data-icon="figma"] i { color: #f24e1e; }
+.skills li[data-icon="js"] i { color: #f7df1e; }
+.skills li[data-icon="typescript"] i { color: #3178c6; }
+.skills li[data-icon="python"] i { color: #3776ab; }
+.skills li[data-icon="aws"] i { color: #ff9900; }
+.skills li[data-icon="git"] i { color: #f05032; }
+
+a {
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #0f172a;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.profile-photo {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #1e293b;
+  margin-bottom: 20px;
+}
+
+.social a i {
+  font-size: 1.4rem;
+}
+
+.fa-briefcase,
+.fa-graduation-cap {
+  margin-right: 8px;
+  color: #38bdf8;
+}
+
+.project-img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.05);
+}
+
+.download-cv {
+  margin-top: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.certificates {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+}
+
+.certificates li {
+  background-color: #1f2937;
+  border-left: 4px solid #38bdf8;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 500;
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.certificates li:hover {
+  background-color: #1e293b;
+}
+
+.certificates i.fas.fa-certificate {
+  color: #38bdf8;
+  font-size: 1.2rem;
+}
+
+.certificates li a {
+  margin-left: auto;
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.certificates li a:hover,
+.certificates li a:focus-visible {
+  color: #0ea5e9;
+  text-decoration: underline;
+}
+
+.view-certificate-icon {
+  margin-left: 8px;
+}
+

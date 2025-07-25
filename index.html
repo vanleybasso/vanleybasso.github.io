@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanley Basso | Portfólio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💼</text></svg>">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <style>
+    :root {
+      
+      --bg-color: #111827;
+      --header-bg: #0f172a;
+      --text-color: #e5e7eb;
+      --text-secondary: #94a3b8;
+      --accent-color: #38bdf8;
+      --accent-hover: #0ea5e9;
+      --card-bg: #1f2937;
+      --border-color: #1e293b;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --section-bg: transparent;
+    }
+    
+    
+    .light-mode {
+      --bg-color: #f8fafc;
+      --header-bg: #ffffff;
+      --text-color: #1e293b;
+      --text-secondary: #64748b;
+      --accent-color: #2563eb;
+      --accent-hover: #1d4ed8;
+      --card-bg: #ffffff;
+      --border-color: #e2e8f0;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --section-bg: #f1f5f9;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    header {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: var(--header-bg);
+      color: var(--text-color);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    header h1 {
+      margin: 0;
+      font-size: 2.75rem;
+    }
+    
+    header p {
+      color: var(--text-secondary);
+      margin-top: 10px;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    
+    .social {
+      margin-top: 20px;
+    }
+    
+    .social a {
+      margin: 0 12px;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .social a:hover {
+      color: var(--accent-hover);
+    }
+    
+    section {
+      padding: 40px 20px;
+      max-width: 880px;
+      margin: 0 auto;
+      background-color: var(--section-bg);
+      border-radius: 8px;
+      margin-bottom: 20px;
+      transition: background-color 0.3s ease;
+    }
+    
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 8px;
+      transition: border-color 0.3s ease;
+    }
+    
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    
+    li {
+      background-color: var(--card-bg);
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px 20px;
+      padding-left: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    
+    .skills li {
+      position: relative;
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      text-align: left;
+      padding: 10px 15px 10px 40px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: default;
+    }
+    
+    .skills li:hover {
+      background: var(--card-bg);
+      white-space: normal;
+      overflow: visible;
+      text-overflow: initial;
+      z-index: 10;
+      box-shadow: 0 4px 12px var(--shadow-color);
+      transform: scale(1.05);
+    }
+    
+    .skills li i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      color: var(--accent-color);
+    }
+    
+    /* Ícones específicos */
+    .skills li[data-icon="react"] i { color: #61dafb; }
+    .skills li[data-icon="html"] i { color: #e34f26; }
+    .skills li[data-icon="css"] i { color: #2965f1; }
+    .skills li[data-icon="tailwind"] i { color: #06b6d4; }
+    .skills li[data-icon="figma"] i { color: #f24e1e; }
+    .skills li[data-icon="js"] i { color: #f7df1e; }
+    .skills li[data-icon="typescript"] i { color: #3178c6; }
+    .skills li[data-icon="python"] i { color: #3776ab; }
+    .skills li[data-icon="aws"] i { color: #ff9900; }
+    .skills li[data-icon="git"] i { color: #f05032; }
+    
+    a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+      color: var(--accent-hover);
+    }
+    
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: var(--header-bg);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .profile-photo {
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--border-color);
+      margin-bottom: 20px;
+      transition: border-color 0.3s ease;
+    }
+    
+    .social a i {
+      font-size: 1.4rem;
+    }
+    
+    .fa-briefcase,
+    .fa-graduation-cap {
+      margin-right: 8px;
+      color: var(--accent-color);
+    }
+    
+    .project-img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 6px var(--shadow-color);
+      display: block;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .project-img:hover {
+      transform: scale(1.05);
+    }
+    
+    .download-cv {
+      margin-top: 20px;
+      animation: fadeIn 1.5s ease;
+    }
+    
+    .btn-download {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .btn-download i {
+      margin-right: 8px;
+    }
+    
+    .btn-download:hover {
+      background-color: var(--accent-hover);
+      color: #ffffff;
+    }
+    
+    .btn-secondary {
+  display: inline-block;
+  margin-left: 12px;
+  background-color: var(--card-bg);
+  color: var(--accent-color);
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  border: 1px solid var(--accent-color); 
+}
+
+.btn-secondary i {
+  margin-right: 8px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: #ffffff; 
+  border-color: var(--accent-color);
+}
+
+
+.light-mode .btn-secondary {
+  background-color: var(--card-bg);
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.light-mode .btn-secondary:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+}
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .certificates {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+    
+    .certificates li {
+      background-color: var(--card-bg);
+      border-left: 4px solid var(--accent-color);
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-weight: 500;
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .certificates li:hover {
+      background-color: var(--border-color);
+    }
+    
+    .certificates i.fas.fa-certificate {
+      color: var(--accent-color);
+      font-size: 1.2rem;
+    }
+    
+    .certificates li a {
+      margin-left: auto;
+      color: var(--accent-color);
+      text-decoration: none;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+    
+    .certificates li a:hover,
+    .certificates li a:focus-visible {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+    
+    .view-certificate-icon {
+      margin-left: 8px;
+    }
+    
+    
+    .theme-toggle {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: var(--accent-color);
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 2px 10px var(--shadow-color);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+    
+    .theme-toggle:hover {
+      background-color: var(--accent-hover);
+      transform: scale(1.1);
+    }
+    
+    
+    nav#sumario {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border-color);
+      padding: 12px 32px;
+      z-index: 1100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      box-shadow: 0 3px 8px var(--shadow-color);
+      user-select: none;
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+    
+    #sumario-links {
+      display: flex;
+      gap: 28px;
+    }
+    
+    nav#sumario a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      cursor: pointer;
+    }
+    
+    nav#sumario a:hover,
+    nav#sumario a:focus-visible {
+      background-color: var(--border-color);
+      color: var(--accent-color);
+      outline-offset: 2px;
+      outline: 2px solid var(--accent-color);
+    }
+    
+    nav#sumario a:active {
+      color: var(--accent-hover);
+    }
+    
+    
+    #hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    
+    #hamburger-btn:hover {
+      color: var(--accent-color);
+      background-color: var(--border-color);
+    }
+    
+    
+    #mobile-menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: var(--header-bg);
+      padding: 20px 0;
+      box-shadow: 0 5px 10px var(--shadow-color);
+      z-index: 1000;
+      transition: background-color 0.3s ease;
+    }
+    
+    #mobile-menu.show {
+      display: block;
+    }
+    
+    #mobile-menu a {
+      display: block;
+      padding: 12px 24px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    #mobile-menu a:hover {
+      background-color: var(--border-color);
+      color: var(--accent-color);
+    }
+    
+    
+    body {
+      padding-top: 60px;
+    }
+    
+    
+   
+    @media (max-width: 768px) {
+      #sumario-links {
+        display: none;
+      }
+      
+      #hamburger-btn {
+        display: block;
+      }
+    }
+    
+    @media (min-width: 769px) {
+      #mobile-menu {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav id="sumario" aria-label="Sumário do site">
+    <div id="sumario-links">
+      <a href="#sobre-mim">Sobre Mim</a>
+      <a href="#experiencia">Experiência Profissional</a>
+      <a href="#formacao">Formação Acadêmica</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#certificados">Certificados</a>
+      <a href="#projetos">Projetos</a>
+    </div>
+    <button id="hamburger-btn" aria-label="Menu" aria-expanded="false">
+      <i class="fas fa-bars"></i>
+    </button>
+  </nav>
+  
+  <div id="mobile-menu">
+    <a href="#sobre-mim">Sobre Mim</a>
+    <a href="#experiencia">Experiência Profissional</a>
+    <a href="#formacao">Formação Acadêmica</a>
+    <a href="#habilidades">Habilidades Técnicas</a>
+    <a href="#projetos">Projetos</a>
+  </div>
+
+  <button class="theme-toggle" aria-label="Alternar tema">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <header>
+    <img src="/imagens/perfil.jpeg" alt="Vanley Basso" class="profile-photo" />
+    <h1>Vanley Basso</h1>
+    <p>Developer | React | JavaScript | TailwindCSS | UI/UX | Figma | Python | PostgreSQL | AWS Certified Cloud Practitioner</p>
+    <div class="social">
+      <a href="mailto:vanley_basso@hotmail.com" aria-label="E-mail"><i class="fas fa-envelope"></i></a>
+      <a href="https://github.com/vanleybasso" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/vanleybasso" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://wa.me/5554996214447" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    
+    <div class="download-cv">
+  <a href="/VANLEY BASSO.pdf" download class="btn-secondary">
+    <i class="fas fa-file-arrow-down"></i> Baixar Currículo
+  </a>
+  <a href="#projetos" class="btn-secondary">
+    <i class="fas fa-folder-open"></i> Ver Projetos
+  </a>
+</div>
+  </header>
+
+  <section id="sobre-mim">
+    <h2>Sobre Mim</h2>
+    <p>Profissional com formação em Administração e MBA em Marketing, recentemente graduado em Análise e Desenvolvimento de Sistemas. Minha transição de carreira para a área de Tecnologia da Informação tem sido marcada por dedicação, aprendizado constante e experiências práticas que fortalecem minha atuação na área. Atualmente atuo como Desenvolvedor Júnior na Rota System, onde contribuo com o desenvolvimento de soluções tecnológicas focadas em eficiência e inovação.</p>
+    <p>Entre meus conhecimentos, destaco experiência com React, JavaScript, TypeScript, Tailwind CSS, Python e PostgreSQL, aplicando essas tecnologias na construção de aplicações modernas, escaláveis e centradas na experiência do usuário. Também possuo conhecimentos em UI/UX Design, com domínio no uso do Figma para criação de interfaces intuitivas e funcionais. Além disso, tenho certificação AWS Cloud Practitioner, o que reforça minha base em computação em nuvem e boas práticas da AWS.</p>
+    <p>Busco constantemente evoluir na área de tecnologia, contribuindo com projetos inovadores e de alto impacto. Sou motivado por desafios e comprometido em construir uma carreira sólida no setor.</p>
+  </section>
+
+  <section id="experiencia">
+    <h2>Experiência Profissional</h2>
+    <ul>
+      <li><i class="fas fa-briefcase"></i> <strong>Rota System</strong> – Desenvolvedor Júnior (Jul 2025 - Atual)<br/>Python, PostgreSQL, automação e infraestrutura de dados.</li>
+      <li><i class="fas fa-briefcase"></i> <strong>Elevor Softwares</strong> – Consultor de TI (Jun 2025 - Jul 2025)<br/>Atuação na prospecção de novos clientes, apresentando soluções do sistema ERP da Elevor de forma estratégica. Meu foco é entender as necessidades dos potenciais clientes, demonstrar como o software pode otimizar seus processos e contribuir para a transformação digital dos seus negócios.</li>
+      <li><i class="fas fa-briefcase"></i> <strong>Compass UOL</strong> – Estagiário de Desenvolvimento Front End (Dez 2024 - Mai 2025)<br/>Atuação no desenvolvimento de projetos utilizando JavaScript e React, com foco na criação de interfaces modernas e responsivas. Experiência em deploy e gerenciamento de aplicações na AWS Cloud.</li>
+    </ul>
+  </section>
+
+  <section id="formacao">
+    <h2>Formação Acadêmica</h2>
+    <ul>
+      <li><i class="fas fa-graduation-cap"></i> <strong>Análise e Desenvolvimento de Sistemas</strong><br/>IFRS – Concluído em 2025</li>
+      <li><i class="fas fa-graduation-cap"></i> <strong>MBA em Marketing</strong><br/>UNINTER – Concluído em 2023</li>
+      <li><i class="fas fa-graduation-cap"></i> <strong>Administração</strong><br/>UNIDEAU – Concluído em 2018</li>
+    </ul>
+  </section>
+
+  <section id="habilidades">
+    <h2>Habilidades Técnicas</h2>
+    <ul class="skills">
+      <li data-icon="react"><i class="fab fa-react"></i> React</li>
+      <li data-icon="html"><i class="fab fa-html5"></i> HTML</li>
+      <li data-icon="css"><i class="fab fa-css3-alt"></i> CSS</li>
+      <li data-icon="tailwind"><i class="fas fa-paint-brush"></i> TailwindCSS</li>
+      <li data-icon="figma"><i class="fab fa-figma"></i> Figma</li>
+      <li data-icon="ui"><i class="fas fa-palette"></i> Design de Interfaces (UI)</li>
+      <li data-icon="ux"><i class="fas fa-user-check"></i> Experiência do Usuário (UX)</li>
+      <li data-icon="design-system"><i class="fas fa-swatchbook"></i> Design System</li>
+      <li data-icon="js"><i class="fab fa-js-square"></i> JavaScript</li>
+      <li data-icon="typescript"><i class="fas fa-code"></i> TypeScript</li>
+      <li data-icon="sql"><i class="fas fa-database"></i> SQL</li>
+      <li data-icon="python"><i class="fab fa-python"></i> Python</li>
+      <li data-icon="aws"><i class="fab fa-aws"></i> AWS Cloud</li>
+      <li data-icon="git"><i class="fab fa-git-alt"></i> Git/GitHub</li>
+      <li data-icon="erp"><i class="fas fa-cogs"></i> ERP</li>
+      <li data-icon="kanban"><i class="fas fa-columns"></i> Kanban</li>
+      <li data-icon="scrum"><i class="fas fa-tasks"></i> Scrum</li>
+    </ul>
+  </section>
+  
+  <section id="certificados">
+    <h2>Certificados</h2>
+    <ul class="certificates">
+      <li>
+        <i class="fas fa-certificate"></i> AWS Certified Cloud Practitioner – Amazon Web Services
+        <a href="https://www.credly.com/badges/d70a2a60-4519-4743-b136-8df6bc87d7ad/public_url" target="_blank" aria-label="Ver certificado AWS">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i> Projetos em React JS - Aprenda Redux, Bootstrap e APIs – Udemy
+        <a href="https://drive.google.com/file/d/1Wjia35prNQOR_iMfPlyB5DD-pP8Dk51j/view" target="_blank" aria-label="Ver certificado React JS">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i> JavaScript do básico ao avançado (c/ Node.js e projetos) – Udemy
+        <a href="https://drive.google.com/file/d/1c7X3L-vjDwyMyASD08Ur0hCNDFHhXwev/view" target="_blank" aria-label="Ver certificado JavaScript">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i> React JS com TypeScript – Udemy
+        <a href="https://drive.google.com/file/d/1FJEggq30m39iirbfXbOGDywnVzt3VuKU/view" target="_blank" aria-label="Ver certificado React TS">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i> TYPESCRIPT em 7 dias + Projetos Reais – Udemy
+        <a href="https://drive.google.com/file/d/15xiCFmXCyUMNXqUp2E--zl_ZvBySv59t/view" target="_blank" aria-label="Ver certificado TypeScript">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i> Tailwind CSS do básico ao avançado + Projetos – Udemy
+        <a href="https://drive.google.com/file/d/1hFLeGBJZyGt0piNydNdFQ2zo80inVvYU/view" target="_blank" aria-label="Ver certificado Tailwind CSS">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i> Desenvolvimento Web + Projetos Reais – Udemy
+        <a href="https://drive.google.com/file/d/1PlPTehXmvi-ZFJl97MYfwrKO1r0dE1ks/view" target="_blank" aria-label="Ver certificado Desenvolvimento Web">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+      <li>
+        <i class="fas fa-certificate"></i> Git & GitHub - The Practical Guide – Udemy
+        <a href="https://drive.google.com/file/d/1FeL8DHTpwv-pTe3ZXHvjCwyt_pBveCjx/view" target="_blank" aria-label="Ver certificado Git & GitHub">
+          <i class="fas fa-file-alt view-certificate-icon"></i>
+        </a>
+      </li>
+    </ul>
+  </section>
+
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <ul>
+      <li class="project-item">
+        <img src="imagens/projeto1.png" alt="Screenshot La Diversité" class="project-img" />
+        <strong>
+          <i class="fas fa-wine-bottle" style="color: var(--accent-color); margin-right:6px;"></i>
+          La Diversité - Imported Beverages E-commerce
+        </strong><br/>
+        Plataforma de e-commerce desenvolvida para a La Diversité, especializada em bebidas importadas. Permite navegação, filtros, carrinho, checkout com cartão e PIX, histórico de pedidos e painel admin para gestão de produtos.<br/>
+        <em>Tecnologias:</em> React, TypeScript, TailwindCSS, Clerk, Redux, JSON Server<br/>
+        <a href="https://github.com/vanleybasso/ladiversite" target="_blank">Ver no GitHub</a>
+      </li>
+      <li class="project-item">
+        <img src="imagens/projeto2.png" alt="Screenshot Plant Peace" class="project-img" />
+        <strong>
+          <i class="fas fa-seedling" style="color: var(--accent-color); margin-right:6px;"></i>
+          Plant Peace
+        </strong><br/>
+        Plataforma e-commerce para venda de plantas, com cadastro, edição e exibição de produtos. Layout responsivo, temas claro e escuro, autenticação e gerenciamento de perfil via Clerk.<br/>
+        <em>Tecnologias:</em> React, TypeScript, TailwindCSS, Clerk, JSON Server<br/>
+        <a href="https://github.com/sabmoura/ARD24_D02_REACTIVISTAS" target="_blank">Ver no GitHub</a>
+      </li>
+      <li class="project-item">
+        <img src="imagens/projeto3.png" alt="Screenshot Nullbank Landing Page" class="project-img" />
+        <strong>
+          <i class="fas fa-credit-card" style="color: var(--accent-color); margin-right:6px;"></i>
+          Nullbank Landing Page
+        </strong><br/>
+        Recriação de landing page para banco fictício, com HTML, CSS e JavaScript puros. Inclui validação de formulário, armazenamento local, páginas customizadas e design responsivo.<br/>
+        <em>Tecnologias:</em> HTML, CSS, JavaScript<br/>
+        <a href="https://github.com/vanleybasso/ProjectNullBank" target="_blank">Ver no GitHub</a>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Vanley Basso – vanley_basso@hotmail.com</p>
+  </footer>
+
+  <script>
+    
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    hamburgerBtn.addEventListener('click', () => {
+      const isExpanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+      hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('show');
+      
+     
+      const icon = hamburgerBtn.querySelector('i');
+      if (mobileMenu.classList.contains('show')) {
+        icon.classList.replace('fa-bars', 'fa-times');
+      } else {
+        icon.classList.replace('fa-times', 'fa-bars');
+      }
+    });
+    
+   
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('show');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.querySelector('i').classList.replace('fa-times', 'fa-bars');
+      });
+    });
+
+    
+    function copyToClipboard(text, message) {
+      navigator.clipboard.writeText(text).then(() => {
+      
+        const notification = document.createElement('div');
+        notification.textContent = message;
+        notification.style.position = 'fixed';
+        notification.style.bottom = '20px';
+        notification.style.left = '50%';
+        notification.style.transform = 'translateX(-50%)';
+        notification.style.backgroundColor = 'var(--card-bg)';
+        notification.style.color = 'var(--text-color)';
+        notification.style.padding = '12px 24px';
+        notification.style.borderRadius = '6px';
+        notification.style.boxShadow = '0 4px 12px var(--shadow-color)';
+        notification.style.zIndex = '2000';
+        notification.style.animation = 'fadeInOut 3s forwards';
+        notification.style.fontFamily = "'Inter', sans-serif";
+        notification.style.border = '1px solid var(--border-color)';
+        
+        
+        document.body.appendChild(notification);
+        
+        
+        setTimeout(() => {
+          notification.remove();
+        }, 3000);
+      }).catch(err => {
+        console.error('Falha ao copiar: ', err);
+      });
+    }
+
+    
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateX(-50%) translateY(20px); }
+        10% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        90% { opacity: 1; transform: translateX(-50%) translateY(0); }
+        100% { opacity: 0; transform: translateX(-50%) translateY(-20px); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    
+    document.querySelector('a[href^="mailto:"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      const email = this.getAttribute('href').replace('mailto:', '');
+      copyToClipboard(email, 'E-mail copiado para a área de transferência!');
+    });
+
+       
+    const themeToggle = document.querySelector('.theme-toggle');
+    const icon = themeToggle.querySelector('i');
+    
+    
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    
+   
+    if (currentTheme === 'light') {
+      document.body.classList.add('light-mode');
+      icon.classList.replace('fa-sun', 'fa-moon'); 
+    } else {
+      icon.classList.replace('fa-moon', 'fa-sun'); 
+    }
+    
+    
+    themeToggle.addEventListener('click', () => {
+      const isLight = document.body.classList.toggle('light-mode');
+      
+      
+      if (isLight) {
+        icon.classList.replace('fa-sun', 'fa-moon'); 
+        localStorage.setItem('theme', 'light');
+      } else {
+        icon.classList.replace('fa-moon', 'fa-sun'); 
+        localStorage.setItem('theme', 'dark');
+      }
+    });
+  </script>
+</body>
+</html>
