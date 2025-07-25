@@ -8,7 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
   <style>
     :root {
-      
       --bg-color: #111827;
       --header-bg: #0f172a;
       --text-color: #e5e7eb;
@@ -20,7 +19,6 @@
       --shadow-color: rgba(0, 0, 0, 0.3);
       --section-bg: transparent;
     }
-    
     
     .light-mode {
       --bg-color: #f8fafc;
@@ -156,7 +154,7 @@
       color: var(--accent-color);
     }
     
-    /* Ícones específicos */
+    /* Ícones específicos, ficar mais bonito visualmente */
     .skills li[data-icon="react"] i { color: #61dafb; }
     .skills li[data-icon="html"] i { color: #e34f26; }
     .skills li[data-icon="css"] i { color: #2965f1; }
@@ -226,18 +224,26 @@
     .download-cv {
       margin-top: 20px;
       animation: fadeIn 1.5s ease;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
     
     .btn-download {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       background-color: var(--accent-color);
       color: #ffffff;
       padding: 10px 20px;
       border-radius: 6px;
       font-weight: 600;
       font-size: 1rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: all 0.3s ease;
       text-decoration: none;
+      border: 1px solid var(--accent-color);
+      white-space: nowrap;
     }
     
     .btn-download i {
@@ -250,40 +256,30 @@
     }
     
     .btn-secondary {
-  display: inline-block;
-  margin-left: 12px;
-  background-color: var(--card-bg);
-  color: var(--accent-color);
-  padding: 10px 20px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  text-decoration: none;
-  border: 1px solid var(--accent-color); 
-}
-
-.btn-secondary i {
-  margin-right: 8px;
-}
-
-.btn-secondary:hover {
-  background-color: var(--accent-color);
-  color: #ffffff; 
-  border-color: var(--accent-color);
-}
-
-
-.light-mode .btn-secondary {
-  background-color: var(--card-bg);
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-}
-
-.light-mode .btn-secondary:hover {
-  background-color: var(--accent-color);
-  color: #ffffff;
-}
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--card-bg);
+      color: var(--accent-color);
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: 1px solid var(--accent-color);
+      white-space: nowrap;
+    }
+    
+    .btn-secondary i {
+      margin-right: 8px;
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--accent-color);
+      color: #ffffff;
+      border-color: var(--accent-color);
+    }
     
     @keyframes fadeIn {
       from {
@@ -346,7 +342,6 @@
       margin-left: 8px;
     }
     
-    
     .theme-toggle {
       position: fixed;
       bottom: 30px;
@@ -371,7 +366,6 @@
       background-color: var(--accent-hover);
       transform: scale(1.1);
     }
-    
     
     nav#sumario {
       position: fixed;
@@ -419,7 +413,6 @@
       color: var(--accent-hover);
     }
     
-    
     #hamburger-btn {
       display: none;
       background: none;
@@ -436,7 +429,6 @@
       color: var(--accent-color);
       background-color: var(--border-color);
     }
-    
     
     #mobile-menu {
       display: none;
@@ -468,13 +460,10 @@
       color: var(--accent-color);
     }
     
-    
     body {
       padding-top: 60px;
     }
     
-    
-   
     @media (max-width: 768px) {
       #sumario-links {
         display: none;
@@ -482,6 +471,17 @@
       
       #hamburger-btn {
         display: block;
+      }
+      
+      .download-cv {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .btn-secondary, .btn-download {
+        width: 100%;
+        max-width: 280px;
+        margin-left: 0 !important;
       }
     }
     
@@ -532,13 +532,13 @@
     </div>
     
     <div class="download-cv">
-  <a href="/VANLEY BASSO.pdf" download class="btn-secondary">
-    <i class="fas fa-file-arrow-down"></i> Baixar Currículo
-  </a>
-  <a href="#projetos" class="btn-secondary">
-    <i class="fas fa-folder-open"></i> Ver Projetos
-  </a>
-</div>
+      <a href="/VANLEY BASSO.pdf" download class="btn-secondary">
+        <i class="fas fa-file-arrow-down"></i> Baixar Currículo
+      </a>
+      <a href="#projetos" class="btn-secondary">
+        <i class="fas fa-folder-open"></i> Ver Projetos
+      </a>
+    </div>
   </header>
 
   <section id="sobre-mim">
@@ -684,7 +684,6 @@
   </footer>
 
   <script>
-    
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
@@ -693,7 +692,6 @@
       hamburgerBtn.setAttribute('aria-expanded', !isExpanded);
       mobileMenu.classList.toggle('show');
       
-     
       const icon = hamburgerBtn.querySelector('i');
       if (mobileMenu.classList.contains('show')) {
         icon.classList.replace('fa-bars', 'fa-times');
@@ -702,7 +700,6 @@
       }
     });
     
-   
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('show');
@@ -711,10 +708,8 @@
       });
     });
 
-    
     function copyToClipboard(text, message) {
       navigator.clipboard.writeText(text).then(() => {
-      
         const notification = document.createElement('div');
         notification.textContent = message;
         notification.style.position = 'fixed';
@@ -731,9 +726,7 @@
         notification.style.fontFamily = "'Inter', sans-serif";
         notification.style.border = '1px solid var(--border-color)';
         
-        
         document.body.appendChild(notification);
-        
         
         setTimeout(() => {
           notification.remove();
@@ -743,7 +736,6 @@
       });
     }
 
-    
     const style = document.createElement('style');
     style.textContent = `
       @keyframes fadeInOut {
@@ -755,21 +747,17 @@
     `;
     document.head.appendChild(style);
 
-    
     document.querySelector('a[href^="mailto:"]').addEventListener('click', function(e) {
       e.preventDefault();
       const email = this.getAttribute('href').replace('mailto:', '');
       copyToClipboard(email, 'E-mail copiado para a área de transferência!');
     });
 
-       
     const themeToggle = document.querySelector('.theme-toggle');
     const icon = themeToggle.querySelector('i');
     
-    
     const currentTheme = localStorage.getItem('theme') || 'dark';
     
-   
     if (currentTheme === 'light') {
       document.body.classList.add('light-mode');
       icon.classList.replace('fa-sun', 'fa-moon'); 
@@ -777,10 +765,8 @@
       icon.classList.replace('fa-moon', 'fa-sun'); 
     }
     
-    
     themeToggle.addEventListener('click', () => {
       const isLight = document.body.classList.toggle('light-mode');
-      
       
       if (isLight) {
         icon.classList.replace('fa-sun', 'fa-moon'); 
